@@ -1,13 +1,15 @@
 import ImageCard from "../ImageCard/ImageCard";
 import styles from "./ImageGallery.module.css";
 
-function ImageGallery({ photos }) {
+function ImageGallery({ photos, onImageClick }) {
   return (
-    <div className={styles.gallery}>
+    <ul className={styles.gallery}>
       {photos.map((photo) => (
-        <ImageCard key={photo.id} photo={photo} />
+        <li key={photo.id}>
+          <ImageCard photo={photo} onClick={onImageClick} />
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
 
