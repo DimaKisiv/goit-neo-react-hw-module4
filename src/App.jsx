@@ -56,9 +56,11 @@ function App() {
   };
 
   return (
-    <div className={styles.app}>
-      <h1 className={styles.headline}>Photo Search</h1>
-      <SearchBar onSearch={handleSearch} />
+    <section className={styles.app}>
+      <header>
+        <h1 className={styles.headline}>Photo Search</h1>
+        <SearchBar onSearch={handleSearch} />
+      </header>
       {loading && page === 1 && <Loader />}
       {error && <ErrorMessage message={error.message} />}
       {photos.length > 0 && (
@@ -77,7 +79,7 @@ function App() {
         onClose={closeModal}
         image={selectedImage}
       />
-    </div>
+    </section>
   );
 }
 
